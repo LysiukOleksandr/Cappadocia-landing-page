@@ -1,9 +1,234 @@
 @import "vars";
 @import "libs";
 @import "fonts";
-
-
-
-
-
 @import "media";
+@import "extends";
+@import "mixins";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  color: $black;
+  font-family: $RLight, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+//header
+
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url("../img/header-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 70px;
+    @media screen and(max-width:1200px) {
+      justify-content: space-around;
+    }
+    @media screen and(max-width:768px) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    @media screen and(max-width:530px) {
+      padding-top: 30px;
+    }
+  }
+  &__nav {
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    z-index: 10;
+
+    @media screen and(max-width:768px) {
+      display: block;
+    }
+    @media screen and(max-width:500px) {
+      width: 30px;
+      height: 30px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      top: 0;
+      left: 0;
+      background: $black;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      top: 15px;
+      left: 0;
+      background: $black;
+      @media screen and(max-width:500px) {
+        top: 13px;
+      }
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      background: $black;
+    }
+    &--active {
+      &:before {
+        top: 13px;
+
+        transform: rotate(-45deg);
+      }
+      &:after {
+        top: 13px;
+        transform: rotate(45deg);
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  &__nav {
+    // position: relative;
+  }
+  &__list {
+    display: flex;
+    z-index: 9;
+    :not(:first-child) {
+      margin-left: 52px;
+      @media screen and(max-width:768px) {
+        margin: 0;
+      }
+    }
+    @media screen and(max-width:768px) {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: absolute;
+      background: $white;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+    &-item {
+      font-family: $RRegular, sans-serif;
+      position: relative;
+      font-size: 24px;
+      @media screen and(max-width:768px) {
+        padding-top: 50px;
+      }
+      &:hover {
+        &:after {
+          opacity: 1;
+          transition: 0.7s all ease;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: $black;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
+    &-link {
+      color: $black;
+    }
+    &--active {
+      display: flex;
+    }
+  }
+  &__number {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    margin-left: 10px;
+    font-family: $RRegular;
+    color: $black;
+    font-size: 24px;
+    @media screen and(max-width:500px) {
+      font-size: 18px;
+    }
+  }
+  &__content {
+    padding-top: 150px;
+    @media screen and(max-width:450px) {
+      padding-top: 200px;
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      max-width: 1075px;
+      @media screen and(max-width:1200px) {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__title {
+    font-family: $balqis;
+    font-size: 250px;
+    line-height: 200px;
+    text-align: center;
+    @media screen and(max-width:1200px) {
+      font-size: 150px;
+      line-height: 150px;
+    }
+    @media screen and(max-width:650px) {
+      font-size: 100px;
+      line-height: 70px;
+    }
+    @media screen and(max-width:450px) {
+      font-size: 70px;
+      line-height: 70px;
+    }
+  }
+  &__subtitle {
+    font-family: $RLightItalic;
+    max-width: 430px;
+    align-self: flex-end;
+    font-size: 56px;
+    line-height: 66px;
+    @media screen and(max-width:1200px) {
+      font-size: 36px;
+    }
+    @media screen and(max-width:650px) {
+      font-size: 26px;
+      line-height: 36px;
+    }
+    @media screen and(max-width:450px) {
+      font-size: 20px;
+    }
+  }
+}
