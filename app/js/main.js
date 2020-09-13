@@ -22,30 +22,66 @@ function menuBurger() {
 
 menuBurger();
 
-let sliderImages = document.querySelectorAll(".fairy-tail__slider-image");
-let count = 0;
-
 function fairyTailSlider() {
-  for (let i = 0; i < sliderImages.length; i++) {
-    sliderImages[i].classList.add("fairy-tail__slider-image--hidden");
+  let sliderImages = document.querySelectorAll(".fairy-tail__slider-image");
+  let count = 0;
+
+  function slider() {
+    for (let i = 0; i < sliderImages.length; i++) {
+      sliderImages[i].classList.add("fairy-tail__slider-image--hidden");
+    }
+    sliderImages[count].classList.remove("fairy-tail__slider-image--hidden");
   }
-  sliderImages[count].classList.remove("fairy-tail__slider-image--hidden");
+
+  document.querySelector(".fairy-tail__button-prev").onclick = function () {
+    if (count - 1 == -1) {
+      count = sliderImages.length - 1;
+    } else {
+      count--;
+    }
+    slider();
+  };
+
+  document.querySelector(".fairy-tail__button-next").onclick = function () {
+    if (count + 1 == sliderImages.length) {
+      count = 0;
+    } else {
+      count++;
+    }
+    slider();
+  };
 }
 
-document.querySelector(".fairy-tail__button-prev").onclick = function () {
-  if (count - 1 == -1) {
-    count = sliderImages.length - 1;
-  } else {
-    count--;
-  }
-  fairyTailSlider();
-};
+fairyTailSlider();
 
-document.querySelector(".fairy-tail__button-next").onclick = function () {
-  if (count + 1 == sliderImages.length) {
-    count = 0;
-  } else {
-    count++;
+function ourTripSlider() {
+  let sliderImages = document.querySelectorAll(".our-trip__slider-img");
+  let count = 0;
+
+  function slider() {
+    for (let i = 0; i < sliderImages.length; i++) {
+      sliderImages[i].classList.add("our-trip__slider-img--hidden");
+    }
+    sliderImages[count].classList.remove("our-trip__slider-img--hidden");
   }
-  fairyTailSlider();
-};
+
+  document.querySelector(".our-trip__button-prev").onclick = function () {
+    if (count - 1 == -1) {
+      count = sliderImages.length - 1;
+    } else {
+      count--;
+    }
+    slider();
+  };
+
+  document.querySelector(".our-trip__button-next").onclick = function () {
+    if (count + 1 == sliderImages.length) {
+      count = 0;
+    } else {
+      count++;
+    }
+    slider();
+  };
+}
+
+ourTripSlider();
