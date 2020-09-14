@@ -138,6 +138,10 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+  color: $black;
+}
 //////////////////
 //////////////////
 //////////////////
@@ -675,8 +679,7 @@ body {
 
 .hotel {
   padding-top: 100px;
-  &__top {
-  }
+
   &__title {
     max-width: 210px;
     @media screen and(max-width:620px) {
@@ -710,8 +713,7 @@ body {
       display: none;
     }
   }
-  &__info {
-  }
+
   &__text {
     max-width: 600px;
     margin-bottom: 20px;
@@ -754,7 +756,6 @@ body {
 
 .price {
   padding-top: 100px;
-  padding-bottom: 100px;
   &__title {
     max-width: 210px;
     @media screen and(max-width:620px) {
@@ -801,8 +802,7 @@ body {
       }
     }
   }
-  &__included {
-  }
+
   &__flex-title {
     max-width: 132px;
     font-family: $RRegular;
@@ -822,8 +822,7 @@ body {
       max-width: 530px;
     }
   }
-  &-included {
-  }
+
   &__bottom {
     margin-top: 230px;
     display: flex;
@@ -914,6 +913,90 @@ body {
       max-width: 100%;
       height: auto;
       object-fit: cover;
+    }
+  }
+}
+
+//footer
+
+.footer {
+  margin-top: 150px;
+  height: 100vh;
+  background: url(../img/footer-background.jpg) no-repeat center / cover;
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+    @media screen and(max-width:1700px) {
+      padding-top: 50px;
+    }
+  }
+  &__contacts {
+    width: 356px;
+    height: 527px;
+    background: url("../img/contacts-background.png") no-repeat center / cover;
+    @media screen and(max-width:400px) {
+      width: 280px;
+      height: 417px;
+    }
+    &-title {
+      margin-top: 50px;
+      font-family: $balqis;
+      font-size: 86px;
+      line-height: 115px;
+      text-align: center;
+      color: $yellow;
+      @media screen and(max-width:400px) {
+        font-size: 46px;
+        line-height: 65px;
+        margin-top: 30px;
+      }
+    }
+    &-call {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        margin-left: 10px;
+      }
+      @media screen and(max-width:400px) {
+        margin-top: 15px;
+      }
+    }
+    &-email {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        margin-left: 10px;
+      }
+    }
+  }
+  &__social-medias {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  &__social-media {
+    margin: 0 7.5px;
+  }
+  &__title {
+    font-family: $balqis;
+    font-size: 86px;
+    line-height: 115px;
+    max-width: 595px;
+    margin-top: 150px;
+    margin-left: 140px;
+    text-align: center;
+    @media screen and(max-width:1120px) {
+      margin-left: 30px;
+    }
+
+    @media screen and(max-width:1000px) {
+      display: none;
     }
   }
 }
