@@ -228,6 +228,7 @@ body {
   text-transform: uppercase;
   font-size: 24px;
   line-height: 28px;
+  cursor: pointer;
   &:hover {
     background: $yellow;
     color: $white;
@@ -555,9 +556,13 @@ body {
   }
 }
 
+//our trip
+
 .our-trip {
   padding-top: 150px;
-
+  @media screen and(max-width:1010px) {
+    padding-top: 50px;
+  }
   &__title {
     max-width: 330px;
   }
@@ -661,6 +666,85 @@ body {
       transition: 1s all ease;
       &--hidden {
         opacity: 0;
+      }
+    }
+  }
+}
+
+//hotel
+
+.hotel {
+  padding-top: 100px;
+  &__top {
+  }
+  &__title {
+    max-width: 210px;
+    @media screen and(max-width:620px) {
+      margin: 0 auto;
+    }
+  }
+
+  &__subtitle {
+    max-width: 175px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    @media screen and(max-width:880px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    @media screen and(max-width:620px) {
+      margin-top: 30px;
+    }
+  }
+  &__img {
+    margin-right: 100px;
+    @media screen and(max-width:1200px) {
+      margin-right: 20px;
+    }
+    @media screen and(max-width:620px) {
+      display: none;
+    }
+  }
+  &__info {
+  }
+  &__text {
+    max-width: 600px;
+    margin-bottom: 20px;
+    @media screen and(max-width:880px) {
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    @media screen and(max-width:400px) {
+      padding: 0 20px;
+    }
+  }
+  &__gallery {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media screen and(max-width:1120px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @media screen and(max-width:880px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+    img {
+      margin-top: 40px;
+      max-width: 280px;
+      @media screen and(max-width:1120px) {
+        margin-top: 20px;
+      }
+      @media screen and(max-width:880px) {
+        margin: 20px;
       }
     }
   }
